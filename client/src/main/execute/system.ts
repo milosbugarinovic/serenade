@@ -53,8 +53,6 @@ export default class System {
     const result = (await driver.getActiveApplication()).toLowerCase();
     if (result === "system dialog") {
       return "system dialog";
-    } else if (result.includes("atom")) {
-      return "atom";
     } else if (
       result.includes("visualstudiocode") ||
       result.includes("visual studio code") ||
@@ -102,6 +100,8 @@ export default class System {
       return "terminal";
     } else if (result.includes("slack")) {
       return "slack";
+    } else if (result.includes("atom")) {
+      return "atom";
     } else if (result.includes("electron") || result.includes("serenade")) {
       return "serenade";
     }
